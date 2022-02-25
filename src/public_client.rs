@@ -20,7 +20,7 @@ impl PublicClient {
     pub async fn authenticate(&self) -> Result<()> {
         self.client.authenticate().await
     }
-    pub async fn is_auth(&self) -> bool {
+    async fn _is_auth(&self) -> bool {
         self.client.is_auth().await
     }
 

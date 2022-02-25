@@ -16,7 +16,7 @@ impl TradingClient {
         client.authenticate().await?;
         Ok(Self { client })
     }
-    pub async fn is_auth(&self) -> bool {
+    async fn _is_auth(&self) -> bool {
         self.client.is_auth().await
     }
 

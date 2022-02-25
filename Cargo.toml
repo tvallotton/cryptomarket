@@ -27,5 +27,5 @@ log = "0.4.14"
 
 [dev-dependencies]
 env_logger = "0.9.0"
-cryptomkt = {path = ".", features = ["rest-client"]}
+
 

@@ -36,7 +36,7 @@ pub enum Error {
 
     #[error("InvestingError")]
     Investing,
-    
+
     #[cfg(feature = "rest-client")]
     #[error("RequestError: {0}")]
     Request(#[from] reqwest::Error),

@@ -1,6 +1,8 @@
 use super::api::*;
 use super::*;
 use crate::api::Subscriptions as Subs;
+
+/// An interface over `TradingClient`, `WalletClient` and `PublicClient`.
 #[derive(Clone)]
 pub struct TripleClient {
     pub trading: TradingClient,
