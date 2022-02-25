@@ -1,0 +1,28 @@
+[package]
+name = "cryptomkt"
+version = "0.1.0"
+authors = ["tvallotton <tvallotton@uc.cl>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+chrono = { version = "0.4.19", features = ["serde"] }
+reqwest = { version = "0.11.6", features = ["json"] }
+ring = "0.16.20"
+serde = { version = "1.0.126", features = ["derive"] }
+serde_json = "1.0.64"
+tokio = { version = "1.5.0", features = ["full"] }
+hex = "0.4.3"
+futures = "0.3.14"
+rand = "0.8.3"
+dotenv = "0.15.0"
+serde_with = "1.9.4"
+tokio-tungstenite ={version= "0.15.0", features=["rustls-tls"]}
+thiserror = "1.0.29"
+derive_builder = "0.10.2"
+log = "0.4.14"
+
+[dev-dependencies]
+env_logger = "0.9.0"
+
+
