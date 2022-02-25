@@ -1,3 +1,7 @@
+//! # Rest Client
+//! The Rest client exists to support two queries that are not supported in
+//! by the websocket clients. these are `symbols_info` and `get_trades`.
+
 use crate::api::{RestTrades, SymbolsInfo};
 use crate::prelude::*;
 use reqwest::Client;
@@ -8,6 +12,7 @@ const TRADES: &str = "https://api.exchange.cryptomkt.com/api/3/public/trades";
 pub struct RestClient {
     client: Client,
 }
+
 impl Default for RestClient {
     fn default() -> Self {
         Self::new()

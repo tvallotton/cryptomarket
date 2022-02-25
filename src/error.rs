@@ -2,6 +2,7 @@ use crate::api::Response;
 use thiserror::Error;
 use tokio::sync::mpsc::error::SendError;
 #[derive(Debug, Error)]
+#[non_exhaustive]
 pub enum Error {
     #[error("ClosedConnectionError.")]
     Closed,
@@ -9,7 +10,7 @@ pub enum Error {
     #[error("TimeoutError: timeout while waiting for a response.")]
     Timeout,
 
-    #[error("RecvError: this error is a bug in the cryptmkt crate. It should not occur.")]
+    #[error("RecvError: this error is a bug in the cryptmkt crate, it should not occur. Any report will be appreciated.")]
     Error(#[from] tokio::sync::oneshot::error::RecvError),
 
     #[error("UnexpectedResponse: Unexpected response type.")]
@@ -35,7 +36,8 @@ pub enum Error {
 
     #[error("InvestingError")]
     Investing,
-
+    
+    #[cfg(feature = "rest-client")]
     #[error("RequestError: {0}")]
     Request(#[from] reqwest::Error),
 

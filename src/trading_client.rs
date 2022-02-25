@@ -4,7 +4,7 @@ use crate::prelude::*;
 use crate::NewOrder;
 
 const WEBSOCKET_URL: &str = "wss://api.exchange.cryptomkt.com/api/3/ws/trading";
-
+/// Used to interface with the cryptomkt websocket trading API.
 #[derive(Clone)]
 pub struct TradingClient {
     client: BaseClient,

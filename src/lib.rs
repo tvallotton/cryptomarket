@@ -30,6 +30,7 @@ mod client_pool;
 mod error;
 mod prelude;
 mod public_client;
+#[cfg(feature = "rest-client")]
 mod rest_client;
 mod trading_client;
 mod triple_client;
@@ -40,6 +41,7 @@ const TIMEMOUT: Duration = Duration::from_secs(5);
 pub use api::{Order, Side, Side::*};
 pub use client_pool::ClientPool;
 pub use public_client::PublicClient;
+#[cfg(feature = "rest-client")]
 pub use rest_client::RestClient;
 pub use trading_client::TradingClient;
 pub use triple_client::TripleClient;
