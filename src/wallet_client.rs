@@ -108,7 +108,7 @@ async fn _auth_client() -> Result<WalletClient> {
 
     Ok(client)
 }
-
+#[cfg(test)]
 #[tokio::test]
 async fn wallet_balance() -> Result {
     env_logger::init();

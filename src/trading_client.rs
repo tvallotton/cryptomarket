@@ -133,6 +133,7 @@ async fn _auth_client() -> Result<TradingClient> {
     let client = TradingClient::new(&var("private_key")?, &var("public_key")?).await?;
     Ok(client)
 }
+#[cfg(test)]
 #[tokio::test]
 async fn test() -> Result {
     env_logger::init();

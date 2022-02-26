@@ -145,6 +145,7 @@ async fn _auth_client() -> Result<PublicClient> {
     Ok(client)
 }
 
+#[cfg(test)]
 #[tokio::test]
 async fn public_client() -> Result {
     env_logger::init();
