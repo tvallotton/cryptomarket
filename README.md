@@ -1,8 +1,9 @@
-An unofficial SDK for the cryptomrkt API for Rust.
-The API currently only supports the websocket cryptomrkt API.
+An unofficial SDK for the [cryptomarket](https://api.exchange.cryptomkt.com/) API for Rust.
+It is primarily focused on the websocket API, and some 
+useful Rest API queries. 
 ```rust
 use dotenv::*;
-use cryptomrkt::{TradingClient, NewOrderBuilder, Buy};
+use cryptomrkt::{TradingClient, NewOrderBuilder, Buy, Order};
 let mut client = TradingClient::new(var("private_key")?, var("public_key")?).await?;
 let order = NewOrderBuilder::new()
     .symbol("BTCCLP")
@@ -10,5 +11,5 @@ let order = NewOrderBuilder::new()
     .quantity(1.0)
     .price(100.0)
     .build();
-client.place_order(order).await?;
+let order: Order = client.place_order(order).await?;
 ```
