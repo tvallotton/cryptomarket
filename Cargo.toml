@@ -1,5 +1,5 @@
 [package]
-name = "cryptomkt"
+name = "cryptomarket"
 version = "0.1.0"
 authors = ["Tomas Vallotton <tvallotton@uc.cl>"]
 description = "Unofficial cryptomarket SDK library"
