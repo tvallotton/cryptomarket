@@ -146,7 +146,7 @@ impl<'r> Request<'r> {
     /// Creates a subscription request for the channel provided
     /// and the symbols given
     ///```rust
-    /// # use crate::api::request::*;
+    /// # use cryptomkt::api::request::*;
     /// Request::subscribe("ticker".into(), vec!["ETHBTC".into()]);
     /// ```
     pub fn subscribe(channel: &'r str, symbols: &'r [&'r str]) -> Self {

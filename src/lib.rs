@@ -2,9 +2,9 @@
 //! The API currently only supports the websocket cryptomrkt API.
 //!
 //! ```
-//! # || -> cryptomrkt::Result {async {
+//! # || -> cryptomkt::Result {async {
 //! use dotenv::*;
-//! use cryptomrkt::{TradingClient, NewOrderBuilder, Buy};
+//! use cryptomkt::{TradingClient, NewOrderBuilder, Buy};
 //!
 //! let mut client = TradingClient::new(var("private_key")?, var("public_key")?).await?;
 //! let order = NewOrderBuilder::new()

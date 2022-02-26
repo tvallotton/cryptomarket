@@ -161,7 +161,7 @@ impl ClientPool {
     /// Used to unsubscribe to changes to the wallet balance for all currencies.
     /// ```no_run
     /// # || async {
-    /// # let client = TripleClient::new("", "").await?;
+    /// # let client = cryptomkt::TripleClient::new("", "").await?;
     /// let success = client.unsubscribe_wallet_balance().await?;
     /// # Ok(())
     /// # };

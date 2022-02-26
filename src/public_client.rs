@@ -5,6 +5,7 @@ use tokio::sync::mpsc::{channel, Receiver};
 
 const WEBSOCKET_URL: &str = "wss://api.exchange.cryptomkt.com/api/3/ws/public";
 
+/// Used to query and subscribe to public market events.
 #[derive(Clone)]
 pub struct PublicClient {
     client: BaseClient,

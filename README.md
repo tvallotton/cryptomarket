@@ -1,6 +1,6 @@
 An unofficial SDK for the cryptomrkt API for Rust.
 The API currently only supports the websocket cryptomrkt API.
-```
+```rust
 # || -> cryptomrkt::Result {async {
 use dotenv::*;
 use cryptomrkt::{TradingClient, NewOrderBuilder, Buy};

@@ -8,6 +8,8 @@ use crate::{
 use tokio::sync::mpsc;
 
 const WEBSOCKET_URL: &str = "wss://api.exchange.cryptomkt.com/api/3/ws/wallet";
+
+/// An interface over the users wallet movements and balance.
 #[derive(Clone)]
 pub struct WalletClient {
     client: BaseClient,
@@ -35,11 +37,13 @@ impl WalletClient {
     }
     /// Used to get the current wallet balance for all currencies.
     /// ```no_run
+    /// # |client: cryptomkt::WalletClient| {
     /// let balance = client.wallet_balance().await?;
     /// let available = vec![];
     /// for currency in balance {
     ///    available.push(currency.available);
     /// }
+    /// # Ok(()) }
     /// ```
     pub async fn wallet_balance(&self) -> Result<Vec<Balance>> {
         let request = Request::wallet_balances();
@@ -82,8 +86,8 @@ impl WalletClient {
     /// Used to unsubscribe to changes to the wallet balance for all currencies.
     /// ```no_run
     /// # || async {
-    /// let client = WalletClient::new("", "").await?;
     /// let success = client.unsubscribe_wallet_balance().await?;
+    /// assert!(success);
     /// # Ok(())
     /// # };
     /// ```
@@ -125,4 +129,8 @@ async fn wallet_balance() -> Result {
     //     }
     // }
     Ok(())
+}
+
+fn _doc_client() -> WalletClient {
+    todo!()
 }

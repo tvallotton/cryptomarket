@@ -110,19 +110,23 @@ impl TripleClient {
     }
     /// Used to get the current wallet balance for all currencies.
     /// ```no_run
+    /// # |client: TripleClient| {
     /// let balance = client.wallet_balance().await?;
     /// let available = vec![];
     /// for currency in balance {
     ///    available.push(currency.available);
     /// }
+    /// # Ok(()) }
     /// ```
     pub async fn wallet_balance(&self) -> Result<Vec<Balance>> {
         self.wallet.wallet_balance().await
     }
     /// Used to subscribe to changes to the wallet balance for all currencies.
     /// ```no_run
+    /// # | client: TripleClient | {
     /// let rx = client.wallet_balance_subscribe();
     /// let balance = rx.recv().await?;
+    /// # Ok(()) }
     /// ```
     pub async fn subscribe_wallet_balances(&self) -> Result<Receiver<Balance>> {
         self.wallet.subscribe_wallet_balances().await
@@ -140,7 +144,7 @@ impl TripleClient {
     /// Used to unsubscribe to changes to the wallet balance for all currencies.
     /// ```no_run
     /// # || async {
-    /// # let client = TripleClient::new("", "").await?;
+    /// # let client = cryptomkt::TripleClient::new("", "").await?;
     /// let success = client.unsubscribe_wallet_balance().await?;
     /// # Ok(())
     /// # };
