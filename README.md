@@ -1,5 +1,5 @@
 An unofficial SDK for the [cryptomarket](https://api.exchange.cryptomkt.com/) API for Rust.
-It is primarily focused on the websocket API, and some 
+It is primarily focused on the websocket API. It also supports some 
 useful Rest API queries. 
 ```rust
 use dotenv::*;
