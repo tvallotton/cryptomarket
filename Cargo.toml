@@ -3,7 +3,7 @@ name = "cryptomkt"
 version = "0.1.0"
 authors = ["Tomas Vallotton <tvallotton@uc.cl>"]
 description = "Unofficial cryptomarket SDK library"
-keywords = ["cryptomarket", "crypto", "cryptomkt"]
+keywords = ["cryptocurrency", "trading", "development", "api", "cryptomarket"]
 license = "Apache-2.0"
 edition = "2021"
 
